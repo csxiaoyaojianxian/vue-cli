@@ -1,6 +1,6 @@
 {
-  "name": "vue-start",
-  "short_name": "vue-start",
+  "name": "vue-cli",
+  "short_name": "vue-cli",
   "icons": [
     {
       "src": "/img/icons/android-chrome-192x192.png",

@@ -71,6 +71,7 @@ module.exports = {
     port: 8080,
     https: false,
     hotOnly: false,
+    disableHostCheck: true,
     // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/cli-service.md#配置代理
     proxy: null, // string | Object
     before: app => {}

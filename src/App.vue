@@ -8,9 +8,74 @@
   </div>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      data: []
+    }
+  },
+  created () {
+    // get
+    this.$axios
+      .get('', {
+        params: {
+          module: 'admin',
+          action: 'thumb',
+          func: 'doQueryThumb',
+          page: 1,
+          num: 10,
+          type: 1,
+          tid: 0,
+          pid: 0
+        }
+        // baseURL: 'http://bbs.cfhd.cf.qq.com/index.php'
+      })
+      .then(res => {
+        // this.data = res.data.message
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+      .finally(() => {
+        console.log('最终执行get')
+      })
+
+    // post
+    this.$axios
+      .post('', {
+        module: 'admin',
+        action: 'thumb',
+        func: 'doQueryThumb',
+        page: 1,
+        num: 10,
+        type: 1,
+        tid: 0,
+        pid: 0
+      }, {
+        // 设置
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded'
+        }
+      })
+      .then(res => {
+        // this.data = res.data.message
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+      .finally(() => {
+        console.log('最终执行post')
+      })
+  }
+}
+</script>
+
 <style lang="less">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

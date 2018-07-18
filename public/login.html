@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="gbk">
+<meta name="robots" content="all">
+<meta name="author" content="Tencent-CP">
+<meta name="Copyright" content="Tencent">
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<title>CF admin</title>
+<style>
+
+</style>
+</head>
+<body>
+<button id="dologin">登录</button>
+<button id="dologout">退出</button>
+<script src="//ossweb-img.qq.com/images/js/jquery/jquery-1.9.1.min.js"></script>
+<script src="//ossweb-img.qq.com/images/js/milo/milo.js"></script>
+<script>
+
+milo.addEvent(g("dologin"), "click", function () {
+  need("biz.login", function (LoginManager) {
+    LoginManager.init({
+      needReloadPage: true
+    });
+    LoginManager.login(function(){
+      window.location.href = "index.html"
+    });
+
+  });
+  return false;
+});
+
+milo.addEvent(g("dologout"), "click", function () {
+  need("biz.login", function (LoginManager) {
+    LoginManager.logout();
+  });
+  return false;
+});
+
+milo.ready(function () {
+  need("biz.login", function (LoginManager) {
+    LoginManager.checkLogin(function (userInfo) {
+      console.log(userInfo)
+      window.location.href = "index.html"
+    },function(){
+      console.log("未登录");
+    });
+  });
+});
+
+</script>
+</body>
+</html>
