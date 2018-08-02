@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <!-- <div id="nav"></div> -->
     <router-view/>
   </div>
 </template>
@@ -16,18 +13,13 @@ export default {
     }
   },
   created () {
+    /*
     // get
     this.$axios
       .get('', {
         params: {
           module: 'admin',
-          action: 'thumb',
-          func: 'doQueryThumb',
-          page: 1,
-          num: 10,
-          type: 1,
-          tid: 0,
-          pid: 0
+          action: 'thumb'
         }
         // baseURL: 'http://bbs.cfhd.cf.qq.com/index.php'
       })
@@ -46,13 +38,7 @@ export default {
     this.$axios
       .post('', {
         module: 'admin',
-        action: 'thumb',
-        func: 'doQueryThumb',
-        page: 1,
-        num: 10,
-        type: 1,
-        tid: 0,
-        pid: 0
+        action: 'thumb'
       }, {
         // 设置
         headers: {
@@ -69,11 +55,18 @@ export default {
       .finally(() => {
         console.log('最终执行post')
       })
+    */
+  },
+  methods: {
+
   }
 }
 </script>
 
 <style lang="less">
+body {
+    margin: 0px;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -91,4 +84,36 @@ export default {
     }
   }
 }
+/* 通用全局样式 */
+/*布局*/
+.mr-sm {
+  margin-right: 6px;
+}
+.mt-sm {
+  margin-top: 6px;
+}
+.float-left {
+  float: left;
+}
+/*尺寸*/
+.text-small {
+  font-size: 14px;
+}
+.text-large {
+  font-size: 26px;
+}
+
+/*文字*/
+.ellipsis {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.ellipsis-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
 </style>

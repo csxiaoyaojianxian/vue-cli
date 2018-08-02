@@ -66,14 +66,28 @@ module.exports = {
 
   // 配置 webpack-dev-server 行为。
   devServer: {
-    open: process.platform === 'darwin',
-    host: '0.0.0.0',
-    port: 8080,
+    open: true,
+    // host: '0.0.0.0',
+    host: 'w.qq.com',
+    port: 80,
     https: false,
-    hotOnly: false,
+    // hotOnly: false,
     disableHostCheck: true,
     // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/cli-service.md#配置代理
-    proxy: null, // string | Object
+    // proxy: null, // string | Object
+    proxy: {
+      '/index.php': {
+        target: 'xxx',
+        changeOrigin: true, // 是否跨域
+        pathRewrite: { // 重写地址
+          '^/api': '/api'
+        }
+        // ws: true,
+      },
+      '/api': {
+        target: '<url>'
+      }
+    },
     before: app => {}
   },
 
