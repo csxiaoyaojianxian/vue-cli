@@ -51,7 +51,6 @@ axios.interceptors.request.use( config => {
       });
     });
   });
-  // window.location.href = 'login.html'
   return config
 })
 axios.interceptors.response.use(function (config) {
