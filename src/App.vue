@@ -86,6 +86,9 @@ body {
 }
 /* 通用全局样式 */
 /*布局*/
+.ml-sm {
+  margin-left: 6px;
+}
 .mr-sm {
   margin-right: 6px;
 }

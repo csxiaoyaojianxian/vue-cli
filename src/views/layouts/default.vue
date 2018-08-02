@@ -3,7 +3,7 @@
     <el-header>
       <el-row>
         <el-col :span="1"><img class="cs-logo" src="../../assets/avatar.png"></el-col>
-        <el-col :span="15"><span class="text-large">CFHD社区管理后台</span></el-col>
+        <el-col :span="15"><span class="text-large">CFHD社区管理后台 v2.0</span></el-col>
         <el-col :span="6" class="ellipsis">当前用户：<span>{{userInfo.name}}</span></el-col>
         <el-col :span="2"><el-button type="danger" id="dologout">注销</el-button></el-col>
       </el-row>
